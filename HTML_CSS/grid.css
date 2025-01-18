@@ -1,0 +1,29 @@
+.grid_container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 10px;
+}
+.grid_container div{
+    padding: 1%;
+    border: 2px solid rgb(41, 47, 41);
+    background-color: aqua;
+    border:dashed;
+}
+.g{
+    height: 500px;
+    width:500px;
+    background-color: black;
+    
+    color: white;
+    text-align: center;
+}
+.g h1{
+    transform: translate(5%,450%);
+}
+@media screen and (max-width:500){
+    .grid_container{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-gap: 10px;
+    }
+}
