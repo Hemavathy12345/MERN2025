@@ -4,7 +4,7 @@ const Contact=()=>{
     var [num,setNum]=useState(0);
 
     return(
-        <div>
+        <div  style={{ textAlign: "center" }}>
             <h1>THIS IS A CONATACT PAGE</h1>
             <h3>This is a State Example</h3>
             <h4>the Number is {num}</h4>

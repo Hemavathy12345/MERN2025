@@ -5,7 +5,7 @@ const About = ()=>{
         setText(e.target.value)
     }
     return (
-        <div>
+        <div  style={{ textAlign: "center" }}>
             <h2>THIS IS A FUNCTIONAL COMPONENRT</h2>
             <h2>TextArea:</h2>
             {/* <textarea value={text} onChange={(event)=>setText(event.target.value)}/> */}
