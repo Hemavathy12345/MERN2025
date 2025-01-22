@@ -1,9 +1,9 @@
 import{Link} from 'react-router-dom';
-
-const Signup=()=>{
+import '../../css/Login.css'
+const Login=()=>{
     return(
         <div>
-            <h1 style={{ textAlign: "center" }}>Signup</h1>
+            <h1 style={{ textAlign: "center" }}>Login</h1>
             <div className="container">
                 <div>
             <label for="username" required>Username: </label>
@@ -15,10 +15,10 @@ const Signup=()=>{
             <label for="password">Password: </label>
             <input type="password" id="password" />
             <br /><br />
-            <Link to="/home"><button>Signup</button></Link>
+            <Link to="/home"><button>Login</button></Link>
             </div>
             </div>
         </div>
     )
 }
-export default Signup;
+export default Login;

@@ -1,21 +1,24 @@
-import ClassComponentEG from './components/classComponents/ClassComponentEG'
+
 import About from './components/FunctionalComponents/About'
 import Contact from './components/FunctionalComponents/Contact';
 import Gallery from './components/FunctionalComponents/Gallery';
 import Home from './components/FunctionalComponents/Home'
+import Login from './components/FunctionalComponents/Login';
 import Navbar from './components/FunctionalComponents/Navbar'
 import Signup from './components/FunctionalComponents/Signup'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 function App() {
 return (
    <BrowserRouter>
-    <Navbar/>
+    
     <Routes>
-    <Route path="/" element={<Home/>}></Route>
-        <Route path="/about" element={<About/>}></Route>
-        <Route path="/gallery" element={<Gallery image="SECE LOGO" page="Gallery"/>}></Route>
-        <Route path="/contact" element={<Contact/>}></Route>
-        <Route path="/signup" element={<Signup/>}></Route>
+    <Route path="/" element={<Login/>}></Route>
+    <Route path="/home" element={<><Navbar /> <Home/></>}></Route>
+        <Route path="/about" element={<><Navbar /><About/></>}></Route>
+        <Route path="/gallery" element={<><Navbar /><Gallery image="SECE LOGO" page="Gallery"/></>}></Route>
+        <Route path="/contact" element={<><Navbar /><Contact/></>}></Route>
+        <Route path="/signup" element={<><Navbar /><Signup/></>}></Route>
+        <Route path="/login" element={<Login/>}></Route>
   {/* <Route path="/ClassComponentEG" element={<ClassComponentEG/>}></Route> */}
   </Routes>
   {/*<Home/><hr/>
