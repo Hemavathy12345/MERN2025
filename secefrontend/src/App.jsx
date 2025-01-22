@@ -9,6 +9,7 @@ import Navbar from './components/FunctionalComponents/Navbar'
 import Signup from './components/FunctionalComponents/Signup'
 import UseEffect from './components/FunctionalComponents/Hooks/UseEffect'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import UseEffectapi from './components/FunctionalComponents/Hooks/UseEffectAPI';
 function App() {
 return (
    <BrowserRouter>
@@ -24,6 +25,7 @@ return (
         <Route path="/login" element={<Login/>}></Route>
         <Route path='/UseEffect' element={<><Navbar /><UseEffect/></>}></Route>
         <Route path='/UseState' element={<><Navbar /><UseState/></>}></Route>
+        <Route path='/UseEffectAPI' element={<><Navbar /><UseEffectapi/></>}></Route>
   {/* <Route path="/ClassComponentEG" element={<ClassComponentEG/>}></Route> */}
   </Routes>
   {/*<Home/><hr/>

@@ -24,6 +24,7 @@ const Navbar = () => {
                     </div>
                     <li><Link to="/UseState" className='link'>UseState</Link></li>
                     <li><Link to="/UseEffect" className='link'>UseEffect</Link></li>
+                    <li><Link to="/UseEffectAPI" className='link'>UseEffectAPI</Link></li>
                     <li><Link to="/signup" className='link'>Signup</Link></li>
                 </ol>
             </nav>
