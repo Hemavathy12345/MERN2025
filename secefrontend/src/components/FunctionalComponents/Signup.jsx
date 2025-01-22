@@ -15,7 +15,7 @@ const Signup=()=>{
             <label for="password">Password: </label>
             <input type="password" id="password" />
             <br /><br />
-            <Link to="/home"><button>Signup</button></Link>
+            <Link to="/"><button>Signup</button></Link>
             </div>
             </div>
         </div>
