@@ -11,6 +11,9 @@ import UseReduce from './components/FunctionalComponents/Hooks/UseReduce';
 import UseEffect from './components/FunctionalComponents/Hooks/UseEffect'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import UseEffectapi from './components/FunctionalComponents/Hooks/UseEffectAPI';
+import UseRef from './components/FunctionalComponents/Hooks/UseRef';
+import UseMemo from './components/FunctionalComponents/Hooks/UseMemo';
+import UseCallBack from './components/FunctionalComponents/Hooks/UseCallBack';
 function App() {
 return (
    <BrowserRouter>
@@ -28,6 +31,9 @@ return (
         <Route path='/UseState' element={<><Navbar /><UseState/></>}></Route>
         <Route path='/UseReduce' element={<><Navbar /><UseReduce/></>}></Route>
         <Route path='/UseEffectAPI' element={<><Navbar /><UseEffectapi/></>}></Route>
+        <Route path='/UseRef' element={<><Navbar/><UseRef/></>}></Route>
+        <Route path='/UseMemo' element={<><Navbar/><UseMemo/></>}></Route>
+        <Route path='/UseCallBack' element={<><Navbar/><UseCallBack/></>}></Route>
   {/* <Route path="/ClassComponentEG" element={<ClassComponentEG/>}></Route> */}
   </Routes>
   {/*<Home/><hr/>
