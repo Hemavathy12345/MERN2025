@@ -1,18 +1,20 @@
+import { useState } from "react";
+import ListItems from "./List";
 
-import {useCallBack, useState} from 'react'
-const UseCallBack=()=>{
-    var [num,setNum]=useState(0);
-    var [dark,setDark]=useState(true);
-    var Styling={
-        backgroundColor:dark?"black":"white",
-        color:dark?"white":"black"
+const UseCallback = () => {
+    var [num, setNum] = useState(0);
+    var [dark, setDark] = useState(true);
+    var styling = {
+        backgroundColor: dark ? "black" : "white",
+        color: dark ? "white" : "black"
     }
-   return(
-    <div style={Styling}>
-        <h1>This is useCallback</h1>
-        <button onClick={()=>setDark(curTheme=>!curTheme)}>Theme</button>
-        <input type="number" value={num} onChange={(e)=>setNum(e.target.value)} />
-    </div>
-   )
-}
-export default UseCallBack
+    var getItems = () => {
+        return [num + 1, num + 2, num + 3];
+    }
+    return (<div style={styling}><button onClick={() => setDark((dark) => !dark)}> Change Theme</button>
+        <h2>Welcome to Callback page</h2>
+        <input type="number" value={num} onChange={(e) => { setNum(parseInt(e.target.value)); }} />
+        <ListItems func={getItems} />
+    </div>)
+};
+export default UseCallback;
