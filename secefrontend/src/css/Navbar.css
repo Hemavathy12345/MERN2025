@@ -15,7 +15,7 @@ ol{
 }
 .link{
     text-decoration: none;
-    color: rgb(255, 255, 255);
+    color: rgb(253, 252, 252);
     padding: 7px;
 }
 .link:hover{
@@ -23,4 +23,37 @@ ol{
     background-color: rgb(255, 255, 255);
     border-radius: 10px;
     
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgb(202, 226, 234);
+    opacity: 10000%;
+    width: 200px;
+    display: block;
+    border-radius: 5px;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-menu li {
+    padding: 10px 0px;
+}
+
+.dropdown-menu li:hover {
+    opacity: 70000%;
+}
+.dropdown-menu {
+    display: none;
+}
+.dropdown:hover .dropdown-menu {
+    display: block;
 }

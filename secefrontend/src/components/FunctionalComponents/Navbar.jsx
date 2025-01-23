@@ -14,17 +14,18 @@ const Navbar = () => {
                     <li><Link to="/about" className='link'>About</Link></li>
                     <li><Link to="/gallery" className='link'>Gallery</Link></li>
                     <li><Link to="/contact" className='link'>Contact</Link></li>
-                    <div>
-                        <span onMouseEnter={(toggleDropDown)} onMouseLeave={(toggleDropDown) } className='link'> Hooks</span>
+                    <div className='dropdown'>
+                        <li onClick={(toggleDropDown)} onLeave={(toggleDropDown) }  className='link'> Hooks</li>
                         {dropdown &&(
-                            <ul>
+                            <ul className='dropdown-menu'>
                                 <li><Link to="/use-state" target='_blank' className='link'>UseState</Link></li>
                                 <li><Link to="/use-effect" className='link'>UseEffect</Link></li>
                             </ul>)}
-                    </div>
+                  </div>
                     <li><Link to="/UseState" className='link'>UseState</Link></li>
                     <li><Link to="/UseEffect" className='link'>UseEffect</Link></li>
                     <li><Link to="/UseEffectAPI" className='link'>UseEffectAPI</Link></li>
+                    <li><Link to="/UseReduce" className='link'>UseReduce</Link></li>
                     <li><Link to="/signup" className='link'>Signup</Link></li>
                 </ol>
             </nav>
