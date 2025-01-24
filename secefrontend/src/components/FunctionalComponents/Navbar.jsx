@@ -18,6 +18,7 @@ const Navbar = () => {
                         <li onClick={(toggleDropDown)} onLeave={(toggleDropDown) }  className='link'> Hooks</li>
                         {dropdown &&(
                             <ul className='dropdown-menu'>
+                                 <li><Link to="/React-lcm" className='link'>LifeCycle</Link></li>
                                  <li><Link to="/UseState" className='link'>UseState</Link></li>
                     <li><Link to="/UseEffect" className='link'>UseEffect</Link></li>
                     <li><Link to="/UseEffectAPI" className='link'>UseEffectAPI</Link></li>

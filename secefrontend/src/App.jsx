@@ -14,6 +14,7 @@ import UseEffectapi from './components/FunctionalComponents/Hooks/UseEffectAPI';
 import UseRef from './components/FunctionalComponents/Hooks/UseRef';
 import UseMemo from './components/FunctionalComponents/Hooks/UseMemo';
 import UseCallBack from './components/FunctionalComponents/Hooks/UseCallBack';
+import ReactLifeCycleMethods from './components/classComponents/ReactLifeCycleMethods';
 function App() {
 return (
    <BrowserRouter>
@@ -34,6 +35,7 @@ return (
         <Route path='/UseRef' element={<><Navbar/><UseRef/></>}></Route>
         <Route path='/UseMemo' element={<><Navbar/><UseMemo/></>}></Route>
         <Route path='/UseCallBack' element={<><Navbar/><UseCallBack/></>}></Route>
+        <Route path='/React-lcm' element={<><Navbar/><ReactLifeCycleMethods/></>}></Route>
   {/* <Route path="/ClassComponentEG" element={<ClassComponentEG/>}></Route> */}
   </Routes>
   {/*<Home/><hr/>
