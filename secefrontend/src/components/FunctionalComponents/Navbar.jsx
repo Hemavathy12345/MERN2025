@@ -28,6 +28,8 @@ const Navbar = () => {
                     <li><Link to="/Memo" className='link'>Memo</Link></li>
                     <li><Link to="/UseCallBack" className='link'>UseCallBack</Link></li>
                     <li><Link to="/Student" className='link'>UseContext</Link></li>
+                    <li><Link to="/CustomHooks" className='link'>CustomHooks</Link></li>
+                    <li><Link to="/UseLocalStorage" className='link'>UseLocalStorage</Link></li>
                             </ul>)}
                   </div>
                   <div className='dropdown'>
@@ -35,6 +37,7 @@ const Navbar = () => {
                         {dropdown &&(
                             <ul className='dropdown-menu'>
                                  <li><Link to="/Memo" className='link'>Memo</Link></li>
+                                 <li><Link to="/Lazy" className='link'>Lazyloading</Link></li>
                                  
                             </ul>)}
                   </div>

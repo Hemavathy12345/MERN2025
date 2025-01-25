@@ -17,8 +17,10 @@ import Memo from './components/FunctionalComponents/Memoization/Memo';
 import UseCallBack from './components/FunctionalComponents/Hooks/UseCallBack';
 import Student from './components/FunctionalComponents/Hooks/UseContext';
 import ReactLifeCycleMethods from './components/classComponents/ReactLifeCycleMethods';
-import UseNumber from './components/FunctionalComponents/Memoization/UpdateNumber';
-import UseNumber1 from './components/FunctionalComponents/Memoization/UpdateNumber1';
+import SampleCustomHook from './components/FunctionalComponents/Hooks/CustomHooks/SampleCustomHook';
+import LasyloadingWithsuspense from './components/FunctionalComponents/Memoization/LazyloadingWithsuspense';
+import UseLocalStorage from './components/FunctionalComponents/Hooks/UseLocalStorage';
+import HOC from './components/FunctionalComponents/HOC/HOC';
 function App() {
 return (
    <BrowserRouter>
@@ -40,10 +42,12 @@ return (
         <Route path='/UseMemo' element={<><Navbar/><UseMemo/></>}></Route>
         <Route path='/Student' element={<><Navbar/><Student/></>}></Route>
         <Route path='/Memo' element={<><Navbar/><Memo/></>}></Route>
-        <Route path='/UseNumber' element={<><Navbar/><UseNumber/></>}></Route>
-        <Route path='/UseNumber1' element={<><Navbar/><UseNumber1/></>}></Route>
+        <Route path='/HOC' element={<><Navbar/><HOC/></>}></Route>
         <Route path='/UseCallBack' element={<><Navbar/><UseCallBack/></>}></Route>
+        <Route path='/Lazy' element={<><Navbar/><LasyloadingWithsuspense/></>}></Route>
         <Route path='/React-lcm' element={<><Navbar/><ReactLifeCycleMethods/></>}></Route>
+        <Route path='/CustomHooks' element={<><Navbar/><SampleCustomHook/></>}></Route>
+        <Route path='/UseLocalStorage' element={<><Navbar/><UseLocalStorage/></>}></Route>
   {/* <Route path="/ClassComponentEG" element={<ClassComponentEG/>}></Route> */}
   </Routes>
   {/*<Home/><hr/>
