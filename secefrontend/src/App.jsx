@@ -13,8 +13,12 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import UseEffectapi from './components/FunctionalComponents/Hooks/UseEffectAPI';
 import UseRef from './components/FunctionalComponents/Hooks/UseRef';
 import UseMemo from './components/FunctionalComponents/Hooks/UseMemo';
+import Memo from './components/FunctionalComponents/Memoization/Memo';
 import UseCallBack from './components/FunctionalComponents/Hooks/UseCallBack';
+import Student from './components/FunctionalComponents/Hooks/UseContext';
 import ReactLifeCycleMethods from './components/classComponents/ReactLifeCycleMethods';
+import UseNumber from './components/FunctionalComponents/Memoization/UpdateNumber';
+import UseNumber1 from './components/FunctionalComponents/Memoization/UpdateNumber1';
 function App() {
 return (
    <BrowserRouter>
@@ -34,6 +38,10 @@ return (
         <Route path='/UseEffectAPI' element={<><Navbar /><UseEffectapi/></>}></Route>
         <Route path='/UseRef' element={<><Navbar/><UseRef/></>}></Route>
         <Route path='/UseMemo' element={<><Navbar/><UseMemo/></>}></Route>
+        <Route path='/Student' element={<><Navbar/><Student/></>}></Route>
+        <Route path='/Memo' element={<><Navbar/><Memo/></>}></Route>
+        <Route path='/UseNumber' element={<><Navbar/><UseNumber/></>}></Route>
+        <Route path='/UseNumber1' element={<><Navbar/><UseNumber1/></>}></Route>
         <Route path='/UseCallBack' element={<><Navbar/><UseCallBack/></>}></Route>
         <Route path='/React-lcm' element={<><Navbar/><ReactLifeCycleMethods/></>}></Route>
   {/* <Route path="/ClassComponentEG" element={<ClassComponentEG/>}></Route> */}

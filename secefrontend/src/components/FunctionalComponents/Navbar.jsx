@@ -25,7 +25,17 @@ const Navbar = () => {
                     <li><Link to="/UseReduce" className='link'>UseReduce</Link></li>
                     <li><Link to="/UseRef" className='link'>UseRef</Link></li>
                     <li><Link to="/UseMemo" className='link'>UseMemo</Link></li>
+                    <li><Link to="/Memo" className='link'>Memo</Link></li>
                     <li><Link to="/UseCallBack" className='link'>UseCallBack</Link></li>
+                    <li><Link to="/Student" className='link'>UseContext</Link></li>
+                            </ul>)}
+                  </div>
+                  <div className='dropdown'>
+                  <li onClick={(toggleDropDown)} onLeave={(toggleDropDown) }  className='link'> Memo</li>
+                        {dropdown &&(
+                            <ul className='dropdown-menu'>
+                                 <li><Link to="/Memo" className='link'>Memo</Link></li>
+                                 
                             </ul>)}
                   </div>
                    
