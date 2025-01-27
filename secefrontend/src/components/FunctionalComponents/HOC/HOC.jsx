@@ -1,13 +1,19 @@
-import Button from './Button'
-import trackingButtonComponents from './trackingButtonComponents'
-const HOC =(name)=>{
-    const ButtonTracking=trackingButtonComponents(Button)
-    return(
+import React from "react";
+import Button from "./Button";
+import trackingButtonComponents from "./trackingButtonComponents";
+
+const HOC = () => {
+    const ButtonTracking = trackingButtonComponents(Button);
+
+    return (
         <div>
-            <h1>This is HOC Example</h1>
-            <button name="Login"/>
-            <ButtonTracking trackingInfo={name}/>
+            <h1>This is an HOC Example</h1>
+            <ButtonTracking
+                name="Login"
+                trackingInfo={{ username: "user123", password: "pass123" }}
+            />
         </div>
-    )
-}
-export default HOC
+    );
+};
+
+export default HOC;

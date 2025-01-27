@@ -30,6 +30,7 @@ const Navbar = () => {
                     <li><Link to="/Student" className='link'>UseContext</Link></li>
                     <li><Link to="/CustomHooks" className='link'>CustomHooks</Link></li>
                     <li><Link to="/UseLocalStorage" className='link'>UseLocalStorage</Link></li>
+                    
                             </ul>)}
                   </div>
                   <div className='dropdown'>
@@ -38,6 +39,7 @@ const Navbar = () => {
                             <ul className='dropdown-menu'>
                                  <li><Link to="/Memo" className='link'>Memo</Link></li>
                                  <li><Link to="/Lazy" className='link'>Lazyloading</Link></li>
+                                 <li><Link to="/HOC" className='link'>HOC</Link></li>
                                  
                             </ul>)}
                   </div>
