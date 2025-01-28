@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
-const Signup = require('./models/signupSchema');
+const Signup = require('./models/SignupSchema');
 const Login = require('./models/loginSchema');
 
 dotenv.config();
