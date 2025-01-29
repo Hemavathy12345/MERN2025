@@ -6,6 +6,7 @@ const Signup = require('./models/signupSchema');
 const Login = require('./models/loginSchema');
 const bcrypt = require('bcrypt');
 const cors=require('cors');
+const jwt = require('jsonwebtoken');
 const app = express();
 dotenv.config();
 app.use(cors())
@@ -17,6 +18,21 @@ mongoose.connect(process.env.MONGODB_URL, { useNewUrlParser: true, useUnifiedTop
     .catch((err) => {
         console.error("MongoDB Connection Unsuccessful:", err.message);
     });
+const verifyToken = (req, res, next) => {
+    console.log("middlaeware called");
+    var token = req.headers.authorization;
+    if(!token) res.send("Access Denied");
+try{
+   const user=jwt.verify(token,process.env.SECRET_KEY);
+   console.log(user);
+   req.user=user;
+}
+catch(err){
+    console.log(err);
+    res.send("Error in token");
+}
+    next();
+}
 app.get('/', (req, res) => {
     res.send(`
         Welcome to the backend, my friend!
@@ -27,6 +43,11 @@ app.get('/', (req, res) => {
 app.get('/static', (req, res) => {
     res.sendFile(path.join(__dirname, "index.html"));
 });
+app.get('/json', verifyToken,(req, res) => {
+res.json({
+    message: "This is the middleware",
+    user: req.user})
+})
 app.post('/signup', async (req, res) => {
     const { firstName, lastName, userName, email, password } = req.body;
     var hashedpassword= await bcrypt.hash(password, 10);
@@ -46,20 +67,32 @@ app.post('/signup', async (req, res) => {
         res.status(400).send({ message: "SignUp Unsuccessful", error: err.message });
     }
 });
-app.post('/login', async (req, res) => {
-    const { userName, password } = req.body;
-    var hashedpassword= await bcrypt.hash(password, 10);
-
+app.post("/login", async (req, res) => {
+    const { email, password } = req.body;
     try {
-        const newLogin = new Login({
-           userName: userName,
-           password: hashedpassword
-        });
-
-        await newLogin.save();
-        res.status(201).send("Login Successful");
+        const user = await Signup.findOne({ email });
+        //console.log(user)
+        if (user) {
+            const payload = {
+                email: user.email
+            }
+            const token = jwt.sign(payload, process.env.SECRET_KEY,{expiresIn:'1h'});
+            console.log(token);
+            var isPasswordCorrect= await bcrypt.compare(password, user.password)
+            // console.log(password,user.password);
+            if (isPasswordCorrect) {
+            await user.save();
+            res.status(200).send("Login Successful",token=token);
+        }
+        else{
+            res.status(200).send("Login Unsuccessful");
+        }
+        }
+         else {
+            res.status(401).send("User not found please signup!");
+        }
     } catch (err) {
-        res.status(400).send({ message: "Login Unsuccessful", error: err.message });
+        res.status(500).send({message:"Error during login"});
     }
 });
 app.get('/getsignupdet', async (req, res) => {
