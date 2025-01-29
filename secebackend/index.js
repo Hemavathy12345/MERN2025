@@ -2,12 +2,13 @@ const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
-const Signup = require('./models/SignupSchema');
+const Signup = require('./models/signupSchema');
 const Login = require('./models/loginSchema');
-
-dotenv.config();
-
+const bcrypt = require('bcrypt');
+const cors=require('cors');
 const app = express();
+dotenv.config();
+app.use(cors())
 app.use(express.json());
 mongoose.connect(process.env.MONGODB_URL, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
@@ -28,14 +29,15 @@ app.get('/static', (req, res) => {
 });
 app.post('/signup', async (req, res) => {
     const { firstName, lastName, userName, email, password } = req.body;
-
+    var hashedpassword= await bcrypt.hash(password, 10);
+    // console.log(hashedpassword);
     try {
         const newSignup = new Signup({
-            firstName,
-            lastName,
-            userName,
-            email,
-            password
+            firstName:firstName,
+            lastName:lastName,
+            userName:userName,
+           email: email,
+           password: hashedpassword
         });
 
         await newSignup.save();
@@ -46,11 +48,12 @@ app.post('/signup', async (req, res) => {
 });
 app.post('/login', async (req, res) => {
     const { userName, password } = req.body;
+    var hashedpassword= await bcrypt.hash(password, 10);
 
     try {
         const newLogin = new Login({
-            userName,
-            password
+           userName: userName,
+           password: hashedpassword
         });
 
         await newLogin.save();
@@ -77,6 +80,22 @@ app.post('/updatedet', async (req, res) => {
 
         if (updateRec) {
             res.json("Record Updated");
+        } else {
+            res.status(404).json("Record Not Found");
+        }
+    } catch (err) {
+        res.status(500).send({ message: "Error Updating Record", error: err.message });
+    }
+});
+app.post('/deletedet', async (req, res) => {
+    try {
+        const deleteRec = await Signup.findOneAndDelete(
+            { userName: "kaarthika" },  
+            { new: true } 
+        );
+
+        if (deleteRec) {
+            res.json("Record Deleted");
         } else {
             res.status(404).json("Record Not Found");
         }
